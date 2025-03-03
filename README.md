@@ -93,9 +93,11 @@ pytest -m checkbox
 ## 🔧 Scope for Enhancements
 ✅ Implement **WebDriver Manager** to remove the need for manual driver setup.
 
+✅ Add support for multiple browsers, currently chrome and firefox supported.
+
 ✅ Improve **logging** for better debugging and tracking test failures in case of parallel execution.
 
-✅ Add support for running automation in headless modes
+✅ Add support for running automation in headless mode
 
 ✅ Add more testcases for Pagination feature
 
