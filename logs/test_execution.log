@@ -1,0 +1,140 @@
+2025-03-02 21:58:22,194 - INFO - conftest - Starting Test: test_verify_book_info
+2025-03-02 21:58:31,873 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 21:58:31,874 - INFO - home_page - Clicking on Elements section
+2025-03-02 21:58:34,784 - INFO - api_request - Invoking API: https://demoqa.com/BookStore/v1/Books
+2025-03-02 21:58:38,348 - INFO - api_request - API Status Code: 200
+2025-03-02 21:58:38,350 - INFO - test_book_store - =================================================
+2025-03-02 21:58:38,350 - INFO - test_book_store - Book info from UI: [{'title': 'Git Pocket Guide', 'author': 'Git Pocket Guide', 'publisher': 'Richard E. Silverman'}, {'title': 'Learning JavaScript Design Patterns', 'author': 'Learning JavaScript Design Patterns', 'publisher': 'Addy Osmani'}, {'title': 'Designing Evolvable Web APIs with ASP.NET', 'author': 'Designing Evolvable Web APIs with ASP.NET', 'publisher': 'Glenn Block et al.'}, {'title': 'Speaking JavaScript', 'author': 'Speaking JavaScript', 'publisher': 'Axel Rauschmayer'}, {'title': "You Don't Know JS", 'author': "You Don't Know JS", 'publisher': 'Kyle Simpson'}, {'title': 'Programming JavaScript Applications', 'author': 'Programming JavaScript Applications', 'publisher': 'Eric Elliott'}, {'title': 'Eloquent JavaScript, Second Edition', 'author': 'Eloquent JavaScript, Second Edition', 'publisher': 'Marijn Haverbeke'}, {'title': 'Understanding ECMAScript 6', 'author': 'Understanding ECMAScript 6', 'publisher': 'Nicholas C. Zakas'}]
+2025-03-02 21:58:38,351 - INFO - test_book_store - =================================================
+2025-03-02 21:58:38,352 - INFO - test_book_store - Book info from API updated list: [{'title': 'Git Pocket Guide', 'author': 'Richard E. Silverman', 'publisher': "O'Reilly Media"}, {'title': 'Learning JavaScript Design Patterns', 'author': 'Addy Osmani', 'publisher': "O'Reilly Media"}, {'title': 'Designing Evolvable Web APIs with ASP.NET', 'author': 'Glenn Block et al.', 'publisher': "O'Reilly Media"}, {'title': 'Speaking JavaScript', 'author': 'Axel Rauschmayer', 'publisher': "O'Reilly Media"}, {'title': "You Don't Know JS", 'author': 'Kyle Simpson', 'publisher': "O'Reilly Media"}, {'title': 'Programming JavaScript Applications', 'author': 'Eric Elliott', 'publisher': "O'Reilly Media"}, {'title': 'Eloquent JavaScript, Second Edition', 'author': 'Marijn Haverbeke', 'publisher': 'No Starch Press'}, {'title': 'Understanding ECMAScript 6', 'author': 'Nicholas C. Zakas', 'publisher': 'No Starch Press'}]
+2025-03-02 21:58:38,352 - INFO - test_book_store - =================================================
+2025-03-02 21:58:38,352 - INFO - bookstore_app_page - Data mismatches found:
+2025-03-02 21:58:38,353 - INFO - bookstore_app_page -  Book: Git Pocket Guide Mismatch in 'author': UI='Git Pocket Guide', API='Richard E. Silverman'
+2025-03-02 21:58:38,354 - INFO - bookstore_app_page -  Book: Git Pocket Guide Mismatch in 'publisher': UI='Richard E. Silverman', API='O'Reilly Media'
+2025-03-02 21:58:38,354 - INFO - bookstore_app_page -  Book: Learning JavaScript Design Patterns Mismatch in 'author': UI='Learning JavaScript Design Patterns', API='Addy Osmani'
+2025-03-02 21:58:38,354 - INFO - bookstore_app_page -  Book: Learning JavaScript Design Patterns Mismatch in 'publisher': UI='Addy Osmani', API='O'Reilly Media'
+2025-03-02 21:58:38,354 - INFO - bookstore_app_page -  Book: Designing Evolvable Web APIs with ASP.NET Mismatch in 'author': UI='Designing Evolvable Web APIs with ASP.NET', API='Glenn Block et al.'
+2025-03-02 21:58:38,355 - INFO - bookstore_app_page -  Book: Designing Evolvable Web APIs with ASP.NET Mismatch in 'publisher': UI='Glenn Block et al.', API='O'Reilly Media'
+2025-03-02 21:58:38,355 - INFO - bookstore_app_page -  Book: Speaking JavaScript Mismatch in 'author': UI='Speaking JavaScript', API='Axel Rauschmayer'
+2025-03-02 21:58:38,356 - INFO - bookstore_app_page -  Book: Speaking JavaScript Mismatch in 'publisher': UI='Axel Rauschmayer', API='O'Reilly Media'
+2025-03-02 21:58:38,358 - INFO - bookstore_app_page -  Book: You Don't Know JS Mismatch in 'author': UI='You Don't Know JS', API='Kyle Simpson'
+2025-03-02 21:58:38,359 - INFO - bookstore_app_page -  Book: You Don't Know JS Mismatch in 'publisher': UI='Kyle Simpson', API='O'Reilly Media'
+2025-03-02 21:58:38,359 - INFO - bookstore_app_page -  Book: Programming JavaScript Applications Mismatch in 'author': UI='Programming JavaScript Applications', API='Eric Elliott'
+2025-03-02 21:58:38,359 - INFO - bookstore_app_page -  Book: Programming JavaScript Applications Mismatch in 'publisher': UI='Eric Elliott', API='O'Reilly Media'
+2025-03-02 21:58:38,359 - INFO - bookstore_app_page -  Book: Eloquent JavaScript, Second Edition Mismatch in 'author': UI='Eloquent JavaScript, Second Edition', API='Marijn Haverbeke'
+2025-03-02 21:58:38,360 - INFO - bookstore_app_page -  Book: Eloquent JavaScript, Second Edition Mismatch in 'publisher': UI='Marijn Haverbeke', API='No Starch Press'
+2025-03-02 21:58:38,360 - INFO - bookstore_app_page -  Book: Understanding ECMAScript 6 Mismatch in 'author': UI='Understanding ECMAScript 6', API='Nicholas C. Zakas'
+2025-03-02 21:58:38,360 - INFO - bookstore_app_page -  Book: Understanding ECMAScript 6 Mismatch in 'publisher': UI='Nicholas C. Zakas', API='No Starch Press'
+2025-03-02 21:58:40,934 - INFO - driver_setup - Closed chrome
+2025-03-02 21:58:40,937 - INFO - conftest - Completed Test: test_verify_book_info
+2025-03-02 21:58:42,943 - INFO - conftest - Starting Test: test_verify_book_info
+2025-03-02 21:58:51,359 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 21:58:51,361 - INFO - home_page - Clicking on Elements section
+2025-03-02 21:58:53,605 - INFO - api_request - Invoking API: https://demoqa.com/BookStore/v1/Books
+2025-03-02 21:58:57,363 - INFO - api_request - API Status Code: 200
+2025-03-02 21:58:57,366 - INFO - test_book_store - =================================================
+2025-03-02 21:58:57,368 - INFO - test_book_store - Book info from UI: [{'title': 'Git Pocket Guide', 'author': 'Git Pocket Guide', 'publisher': 'Richard E. Silverman'}, {'title': 'Learning JavaScript Design Patterns', 'author': 'Learning JavaScript Design Patterns', 'publisher': 'Addy Osmani'}, {'title': 'Designing Evolvable Web APIs with ASP.NET', 'author': 'Designing Evolvable Web APIs with ASP.NET', 'publisher': 'Glenn Block et al.'}, {'title': 'Speaking JavaScript', 'author': 'Speaking JavaScript', 'publisher': 'Axel Rauschmayer'}, {'title': "You Don't Know JS", 'author': "You Don't Know JS", 'publisher': 'Kyle Simpson'}, {'title': 'Programming JavaScript Applications', 'author': 'Programming JavaScript Applications', 'publisher': 'Eric Elliott'}, {'title': 'Eloquent JavaScript, Second Edition', 'author': 'Eloquent JavaScript, Second Edition', 'publisher': 'Marijn Haverbeke'}, {'title': 'Understanding ECMAScript 6', 'author': 'Understanding ECMAScript 6', 'publisher': 'Nicholas C. Zakas'}]
+2025-03-02 21:58:57,369 - INFO - test_book_store - =================================================
+2025-03-02 21:58:57,370 - INFO - test_book_store - Book info from API updated list: [{'title': 'Git Pocket Guide', 'author': 'Richard E. Silverman', 'publisher': "O'Reilly Media"}, {'title': 'Learning JavaScript Design Patterns', 'author': 'Addy Osmani', 'publisher': "O'Reilly Media"}, {'title': 'Designing Evolvable Web APIs with ASP.NET', 'author': 'Glenn Block et al.', 'publisher': "O'Reilly Media"}, {'title': 'Speaking JavaScript', 'author': 'Axel Rauschmayer', 'publisher': "O'Reilly Media"}, {'title': "You Don't Know JS", 'author': 'Kyle Simpson', 'publisher': "O'Reilly Media"}, {'title': 'Programming JavaScript Applications', 'author': 'Eric Elliott', 'publisher': "O'Reilly Media"}, {'title': 'Eloquent JavaScript, Second Edition', 'author': 'Marijn Haverbeke', 'publisher': 'No Starch Press'}, {'title': 'Understanding ECMAScript 6', 'author': 'Nicholas C. Zakas', 'publisher': 'No Starch Press'}]
+2025-03-02 21:58:57,371 - INFO - test_book_store - =================================================
+2025-03-02 21:58:57,372 - INFO - bookstore_app_page - Data mismatches found:
+2025-03-02 21:58:57,374 - INFO - bookstore_app_page -  Book: Git Pocket Guide Mismatch in 'author': UI='Git Pocket Guide', API='Richard E. Silverman'
+2025-03-02 21:58:57,376 - INFO - bookstore_app_page -  Book: Git Pocket Guide Mismatch in 'publisher': UI='Richard E. Silverman', API='O'Reilly Media'
+2025-03-02 21:58:57,378 - INFO - bookstore_app_page -  Book: Learning JavaScript Design Patterns Mismatch in 'author': UI='Learning JavaScript Design Patterns', API='Addy Osmani'
+2025-03-02 21:58:57,378 - INFO - bookstore_app_page -  Book: Learning JavaScript Design Patterns Mismatch in 'publisher': UI='Addy Osmani', API='O'Reilly Media'
+2025-03-02 21:58:57,379 - INFO - bookstore_app_page -  Book: Designing Evolvable Web APIs with ASP.NET Mismatch in 'author': UI='Designing Evolvable Web APIs with ASP.NET', API='Glenn Block et al.'
+2025-03-02 21:58:57,380 - INFO - bookstore_app_page -  Book: Designing Evolvable Web APIs with ASP.NET Mismatch in 'publisher': UI='Glenn Block et al.', API='O'Reilly Media'
+2025-03-02 21:58:57,380 - INFO - bookstore_app_page -  Book: Speaking JavaScript Mismatch in 'author': UI='Speaking JavaScript', API='Axel Rauschmayer'
+2025-03-02 21:58:57,380 - INFO - bookstore_app_page -  Book: Speaking JavaScript Mismatch in 'publisher': UI='Axel Rauschmayer', API='O'Reilly Media'
+2025-03-02 21:58:57,381 - INFO - bookstore_app_page -  Book: You Don't Know JS Mismatch in 'author': UI='You Don't Know JS', API='Kyle Simpson'
+2025-03-02 21:58:57,381 - INFO - bookstore_app_page -  Book: You Don't Know JS Mismatch in 'publisher': UI='Kyle Simpson', API='O'Reilly Media'
+2025-03-02 21:58:57,381 - INFO - bookstore_app_page -  Book: Programming JavaScript Applications Mismatch in 'author': UI='Programming JavaScript Applications', API='Eric Elliott'
+2025-03-02 21:58:57,397 - INFO - bookstore_app_page -  Book: Programming JavaScript Applications Mismatch in 'publisher': UI='Eric Elliott', API='O'Reilly Media'
+2025-03-02 21:58:57,398 - INFO - bookstore_app_page -  Book: Eloquent JavaScript, Second Edition Mismatch in 'author': UI='Eloquent JavaScript, Second Edition', API='Marijn Haverbeke'
+2025-03-02 21:58:57,398 - INFO - bookstore_app_page -  Book: Eloquent JavaScript, Second Edition Mismatch in 'publisher': UI='Marijn Haverbeke', API='No Starch Press'
+2025-03-02 21:58:57,399 - INFO - bookstore_app_page -  Book: Understanding ECMAScript 6 Mismatch in 'author': UI='Understanding ECMAScript 6', API='Nicholas C. Zakas'
+2025-03-02 21:58:57,399 - INFO - bookstore_app_page -  Book: Understanding ECMAScript 6 Mismatch in 'publisher': UI='Nicholas C. Zakas', API='No Starch Press'
+2025-03-02 21:59:01,272 - INFO - driver_setup - Closed chrome
+2025-03-02 21:59:01,275 - INFO - conftest - Completed Test: test_verify_book_info
+2025-03-02 21:59:03,279 - INFO - conftest - Starting Test: test_verify_book_info
+2025-03-02 21:59:17,585 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 21:59:17,588 - INFO - home_page - Clicking on Elements section
+2025-03-02 21:59:20,193 - INFO - api_request - Invoking API: https://demoqa.com/BookStore/v1/Books
+2025-03-02 21:59:23,635 - INFO - api_request - API Status Code: 200
+2025-03-02 21:59:23,637 - INFO - test_book_store - =================================================
+2025-03-02 21:59:23,638 - INFO - test_book_store - Book info from UI: [{'title': 'Git Pocket Guide', 'author': 'Git Pocket Guide', 'publisher': 'Richard E. Silverman'}, {'title': 'Learning JavaScript Design Patterns', 'author': 'Learning JavaScript Design Patterns', 'publisher': 'Addy Osmani'}, {'title': 'Designing Evolvable Web APIs with ASP.NET', 'author': 'Designing Evolvable Web APIs with ASP.NET', 'publisher': 'Glenn Block et al.'}, {'title': 'Speaking JavaScript', 'author': 'Speaking JavaScript', 'publisher': 'Axel Rauschmayer'}, {'title': "You Don't Know JS", 'author': "You Don't Know JS", 'publisher': 'Kyle Simpson'}, {'title': 'Programming JavaScript Applications', 'author': 'Programming JavaScript Applications', 'publisher': 'Eric Elliott'}, {'title': 'Eloquent JavaScript, Second Edition', 'author': 'Eloquent JavaScript, Second Edition', 'publisher': 'Marijn Haverbeke'}, {'title': 'Understanding ECMAScript 6', 'author': 'Understanding ECMAScript 6', 'publisher': 'Nicholas C. Zakas'}]
+2025-03-02 21:59:23,639 - INFO - test_book_store - =================================================
+2025-03-02 21:59:23,640 - INFO - test_book_store - Book info from API updated list: [{'title': 'Git Pocket Guide', 'author': 'Richard E. Silverman', 'publisher': "O'Reilly Media"}, {'title': 'Learning JavaScript Design Patterns', 'author': 'Addy Osmani', 'publisher': "O'Reilly Media"}, {'title': 'Designing Evolvable Web APIs with ASP.NET', 'author': 'Glenn Block et al.', 'publisher': "O'Reilly Media"}, {'title': 'Speaking JavaScript', 'author': 'Axel Rauschmayer', 'publisher': "O'Reilly Media"}, {'title': "You Don't Know JS", 'author': 'Kyle Simpson', 'publisher': "O'Reilly Media"}, {'title': 'Programming JavaScript Applications', 'author': 'Eric Elliott', 'publisher': "O'Reilly Media"}, {'title': 'Eloquent JavaScript, Second Edition', 'author': 'Marijn Haverbeke', 'publisher': 'No Starch Press'}, {'title': 'Understanding ECMAScript 6', 'author': 'Nicholas C. Zakas', 'publisher': 'No Starch Press'}]
+2025-03-02 21:59:23,642 - INFO - test_book_store - =================================================
+2025-03-02 21:59:23,643 - INFO - bookstore_app_page - Data mismatches found:
+2025-03-02 21:59:23,643 - INFO - bookstore_app_page -  Book: Git Pocket Guide Mismatch in 'author': UI='Git Pocket Guide', API='Richard E. Silverman'
+2025-03-02 21:59:23,644 - INFO - bookstore_app_page -  Book: Git Pocket Guide Mismatch in 'publisher': UI='Richard E. Silverman', API='O'Reilly Media'
+2025-03-02 21:59:23,644 - INFO - bookstore_app_page -  Book: Learning JavaScript Design Patterns Mismatch in 'author': UI='Learning JavaScript Design Patterns', API='Addy Osmani'
+2025-03-02 21:59:23,645 - INFO - bookstore_app_page -  Book: Learning JavaScript Design Patterns Mismatch in 'publisher': UI='Addy Osmani', API='O'Reilly Media'
+2025-03-02 21:59:23,645 - INFO - bookstore_app_page -  Book: Designing Evolvable Web APIs with ASP.NET Mismatch in 'author': UI='Designing Evolvable Web APIs with ASP.NET', API='Glenn Block et al.'
+2025-03-02 21:59:23,646 - INFO - bookstore_app_page -  Book: Designing Evolvable Web APIs with ASP.NET Mismatch in 'publisher': UI='Glenn Block et al.', API='O'Reilly Media'
+2025-03-02 21:59:23,646 - INFO - bookstore_app_page -  Book: Speaking JavaScript Mismatch in 'author': UI='Speaking JavaScript', API='Axel Rauschmayer'
+2025-03-02 21:59:23,647 - INFO - bookstore_app_page -  Book: Speaking JavaScript Mismatch in 'publisher': UI='Axel Rauschmayer', API='O'Reilly Media'
+2025-03-02 21:59:23,647 - INFO - bookstore_app_page -  Book: You Don't Know JS Mismatch in 'author': UI='You Don't Know JS', API='Kyle Simpson'
+2025-03-02 21:59:23,648 - INFO - bookstore_app_page -  Book: You Don't Know JS Mismatch in 'publisher': UI='Kyle Simpson', API='O'Reilly Media'
+2025-03-02 21:59:23,648 - INFO - bookstore_app_page -  Book: Programming JavaScript Applications Mismatch in 'author': UI='Programming JavaScript Applications', API='Eric Elliott'
+2025-03-02 21:59:23,648 - INFO - bookstore_app_page -  Book: Programming JavaScript Applications Mismatch in 'publisher': UI='Eric Elliott', API='O'Reilly Media'
+2025-03-02 21:59:23,649 - INFO - bookstore_app_page -  Book: Eloquent JavaScript, Second Edition Mismatch in 'author': UI='Eloquent JavaScript, Second Edition', API='Marijn Haverbeke'
+2025-03-02 21:59:23,649 - INFO - bookstore_app_page -  Book: Eloquent JavaScript, Second Edition Mismatch in 'publisher': UI='Marijn Haverbeke', API='No Starch Press'
+2025-03-02 21:59:23,649 - INFO - bookstore_app_page -  Book: Understanding ECMAScript 6 Mismatch in 'author': UI='Understanding ECMAScript 6', API='Nicholas C. Zakas'
+2025-03-02 21:59:23,650 - INFO - bookstore_app_page -  Book: Understanding ECMAScript 6 Mismatch in 'publisher': UI='Nicholas C. Zakas', API='No Starch Press'
+2025-03-02 21:59:25,960 - INFO - driver_setup - Closed chrome
+2025-03-02 21:59:25,964 - INFO - conftest - Completed Test: test_verify_book_info
+2025-03-02 21:59:25,968 - INFO - conftest - Starting Test: test_expand_all_checkboxes
+2025-03-02 22:00:07,029 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:00:07,032 - INFO - home_page - Clicking on Elements section
+2025-03-02 22:00:08,309 - INFO - checkbox_page - Level3 Checkbox Element Count: 2
+2025-03-02 22:00:08,595 - INFO - test_checkbox - Test status: True
+2025-03-02 22:00:10,927 - INFO - driver_setup - Closed chrome
+2025-03-02 22:00:10,931 - INFO - conftest - Completed Test: test_expand_all_checkboxes
+2025-03-02 22:00:10,934 - INFO - conftest - Starting Test: test_check_level2_checkbox_recursively
+2025-03-02 22:00:20,470 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:00:20,473 - INFO - home_page - Clicking on Elements section
+2025-03-02 22:00:21,844 - INFO - checkbox_page - Level3 Checkbox Element Count: 2
+2025-03-02 22:00:22,115 - INFO - checkbox_page - Checking if Documents checkbox and it's all child nodes are selected
+2025-03-02 22:00:22,513 - INFO - checkbox_page - All child checkboxes are selected!
+2025-03-02 22:00:24,817 - INFO - driver_setup - Closed chrome
+2025-03-02 22:00:24,820 - INFO - conftest - Completed Test: test_check_level2_checkbox_recursively
+2025-03-02 22:00:24,823 - INFO - conftest - Starting Test: test_check_specific_checkbox
+2025-03-02 22:00:28,441 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:00:28,443 - INFO - home_page - Clicking on Elements section
+2025-03-02 22:00:37,438 - INFO - checkbox_page - Level3 Checkbox Element Count: 2
+2025-03-02 22:00:37,869 - INFO - checkbox_page - Checking for xpath: label[for='tree-node-home'] span[class='rct-checkbox'] svg path
+2025-03-02 22:00:37,886 - INFO - checkbox_page - Checking for xpath: label[for='tree-node-documents'] span[class='rct-checkbox'] svg path
+2025-03-02 22:00:37,905 - INFO - checkbox_page - Checking for xpath: label[for='tree-node-office'] span[class='rct-checkbox'] svg path
+2025-03-02 22:00:37,924 - INFO - checkbox_page - Checking for xpath: (//*[name()='svg'][@class='rct-icon rct-icon-check'])[1]
+2025-03-02 22:00:40,297 - INFO - driver_setup - Closed chrome
+2025-03-02 22:00:40,300 - INFO - conftest - Completed Test: test_check_specific_checkbox
+2025-03-02 22:00:40,304 - INFO - conftest - Starting Test: test_wait_for_buttons_visibility
+2025-03-02 22:00:48,650 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:00:48,652 - INFO - home_page - Clicking on Elements section
+2025-03-02 22:00:54,759 - INFO - dynamic_properties_page - Initial Color: rgba(234, 135, 145, 1)
+2025-03-02 22:00:57,223 - INFO - driver_setup - Closed chrome
+2025-03-02 22:00:57,226 - INFO - conftest - Completed Test: test_wait_for_buttons_visibility
+2025-03-02 22:00:57,231 - INFO - conftest - Starting Test: test_verify_pagination_ui
+2025-03-02 22:01:09,997 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:01:30,461 - INFO - home_page - Clicking on Elements section
+2025-03-02 22:01:33,376 - INFO - driver_setup - Closed chrome
+2025-03-02 22:01:33,379 - INFO - conftest - Completed Test: test_verify_pagination_ui
+2025-03-02 22:01:33,383 - INFO - conftest - Starting Test: test_verify_default_page_load
+2025-03-02 22:01:47,732 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:01:47,734 - INFO - home_page - Clicking on Elements section
+2025-03-02 22:01:50,388 - INFO - driver_setup - Closed chrome
+2025-03-02 22:01:50,391 - INFO - conftest - Completed Test: test_verify_default_page_load
+2025-03-02 22:01:50,395 - INFO - conftest - Starting Test: test_verify_clicking_next_button
+2025-03-02 22:02:00,710 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:02:02,995 - INFO - driver_setup - Closed chrome
+2025-03-02 22:02:02,999 - INFO - conftest - Completed Test: test_verify_clicking_next_button
+2025-03-02 22:02:03,009 - INFO - conftest - Starting Test: test_verify_clicking_previous_button
+2025-03-02 22:02:16,190 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:02:18,442 - INFO - driver_setup - Closed chrome
+2025-03-02 22:02:18,445 - INFO - conftest - Completed Test: test_verify_clicking_previous_button
+2025-03-02 22:02:18,449 - INFO - conftest - Starting Test: test_verify_previous_button_is_disabled_on_first_page
+2025-03-02 22:02:34,407 - INFO - driver_setup - Launched chrome and opened https://demoqa.com
+2025-03-02 22:02:36,647 - INFO - driver_setup - Closed chrome
+2025-03-02 22:02:36,651 - INFO - conftest - Completed Test: test_verify_previous_button_is_disabled_on_first_page
