@@ -6,6 +6,7 @@ HEADERS = {
     "Referer": "https://demoqa.com/books",
 }
 
+
 def fetch_books(url=BASE_URL, headers=None):
     """Fetches book data from the DemoQA Book Store API."""
     if headers is None:

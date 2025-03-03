@@ -19,6 +19,7 @@ class BookStorePage(BasePage):
         elements_page = ElementsPage(self.driver)
         elements_page.navigate()
         elements_page.click_book_store_application()
+
     def get_books_info(self):
         """
         Function to fetch all the books info(title, author and publisher) displayed in UI
@@ -60,11 +61,11 @@ class BookStorePage(BasePage):
                 errors.append({"title": ui_book['title'], "mismatches": mismatches})
 
         if errors:
-            logger.info(f"Data mismatches found:")
+            logger.info("Data mismatches found:")
             for error in errors:
                 for key, value in error['mismatches'].items():
-                    logger.info(f" Book: {error['title']} Mismatch in '{key}': UI='{value['UI']}', API='{value['API']}'")
+                    logger.info(
+                        f" Book: {error['title']} Mismatch in '{key}': UI='{value['UI']}', API='{value['API']}'")
             return False
-        else:
-            logger.info("All book details match.")
-            return True
+        logger.info("All book details match.")
+        return True

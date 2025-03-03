@@ -22,7 +22,7 @@ class WebTablesTestClass:
                                                                           "page!")
         assert web_tables_page.element_is_visible(next_btn) == True, "'Next' button is not visible on default page!"
         assert web_tables_page.element_is_visible(page_info_element) == True, ("'Page Info element'"
-                                                                           " is not visible on default page!")
+                                                                               " is not visible on default page!")
         assert web_tables_page.element_is_visible(page_size_combo_box) == True, ("'Page Size Combo box is not visible "
                                                                                  "on default page!'")
 

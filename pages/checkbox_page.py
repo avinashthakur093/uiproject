@@ -75,7 +75,8 @@ class CheckboxPage(BasePage):
             # Locate the <svg> tag inside the checkbox <span>
             svg_element = checkbox.find_element(By.XPATH, CheckboxPageObjects.SELECTED_CHECKBOX)
             assert "rct-icon-check" in svg_element.get_attribute(
-                "class"), f"Checkbox is not selected: {checkbox.find_element(By.XPATH, CheckboxPageObjects.SELECTED_CHECKBOX_TEXT).text}"
+                "class"), f"Checkbox is not selected: {
+            checkbox.find_element(By.XPATH, CheckboxPageObjects.SELECTED_CHECKBOX_TEXT).text}"
 
         logger.info(f"All child checkboxes are selected!")
 

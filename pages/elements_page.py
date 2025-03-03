@@ -6,6 +6,7 @@ from pages.base_page import BasePage
 from pages.home_page import HomePage
 from config import Config
 
+
 class ElementsPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
@@ -41,7 +42,8 @@ class ElementsPage(BasePage):
         Navigate from Elements > Dynamic Properties
         :return:
         """
-        WebDriverWait(self.driver, Config.shortTimeout).until(EC.element_to_be_clickable(self.dynamic_properties)).click()
+        WebDriverWait(self.driver, Config.shortTimeout).until(
+            EC.element_to_be_clickable(self.dynamic_properties)).click()
 
     def click_book_store_application(self):
         """
@@ -56,4 +58,3 @@ class ElementsPage(BasePage):
         WebDriverWait(self.driver, Config.shortTimeout).until(EC.element_to_be_clickable(self.book_store_app)).click()
         # Navigate to Book Store, where Book information is available
         WebDriverWait(self.driver, Config.shortTimeout).until(EC.element_to_be_clickable(self.book_store)).click()
-

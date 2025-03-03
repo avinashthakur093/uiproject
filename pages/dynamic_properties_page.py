@@ -15,7 +15,6 @@ class DynamicPropertiesPage(BasePage):
         self.color_change_btn = (By.XPATH, DynamicPropertiesPageObjects.COLOR_CHANGE_BTN)
         self.visible_after_5s_btn = (By.XPATH, DynamicPropertiesPageObjects.VISIBLE_AFTER_5S_BTN)
 
-
     def navigate(self):
         """
         Function navigates to Dynamic Properties Page
@@ -45,7 +44,7 @@ class DynamicPropertiesPage(BasePage):
         color_btn = wait.until(EC.presence_of_element_located((self.color_change_btn[0], self.color_change_btn[1])))
         logger.info(f"Initial Color: {initial_color}")
         wait.until(lambda d: self.driver.execute_script(GenericObjects.JS_GET_COMPUTED_STYLE_BY_CSS_CLASS,
-                                                   color_btn) != initial_color)
+                                                        color_btn) != initial_color)
         changed_color = self.driver.execute_script(GenericObjects.JS_GET_COMPUTED_STYLE_BY_CSS_CLASS, color_btn)
         print("Button color changed from", initial_color, "to", changed_color)
         # Assert that the color has changed

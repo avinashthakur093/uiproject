@@ -67,6 +67,3 @@ class WebTablesPage(BasePage):
         element = WebDriverWait(self.driver, Config.shortTimeout).until(EC.visibility_of_element_located(
             element_to_be_checked))
         return element.is_displayed()
-
-
-

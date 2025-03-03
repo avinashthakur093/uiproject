@@ -9,6 +9,7 @@ if not os.path.exists(log_dir):
 # Configure log file path
 log_file = os.path.join(log_dir, "test_execution.log")
 
+
 def setup_logger(name="test_framework"):
     """
     Sets up a logger that logs messages from all modules, including test logs.
@@ -34,6 +35,7 @@ def setup_logger(name="test_framework"):
         logger.addHandler(console_handler)
 
     return logger
+
 
 # Create a global logger instance
 logger = setup_logger()

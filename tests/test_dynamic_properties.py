@@ -1,6 +1,7 @@
 import pytest
 from pages.dynamic_properties_page import DynamicPropertiesPage
 
+
 class DynamicPropertiesTestClass:
     @pytest.mark.dynamic_properties
     def test_wait_for_buttons_visibility(self, driver):
