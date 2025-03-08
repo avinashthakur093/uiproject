@@ -1,20 +1,26 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from page_objects.all_page_objects import ElementsPageObjects
+# from page_objects.all_page_objects import ElementsPageObjects
 from pages.base_page import BasePage
 from pages.home_page import HomePage
 from config import Config
 
 
 class ElementsPage(BasePage):
+    CHECKBOX_LINK = "//span[text()='Check Box']"
+    WEB_TABLES_LINK = "//span[text()='Web Tables']"
+    DYNAMIC_PROPERTIES_LINK = "//span[text()='Dynamic Properties']"
+    BOOK_STORE_APP_LINK = "//div[text()='Book Store Application']"
+    BOOK_STORE_LINK = "//span[text()='Book Store']"
+
     def __init__(self, driver):
         super().__init__(driver)
-        self.checkbox_link = (By.XPATH, ElementsPageObjects.CHECKBOX_LINK)
-        self.webtables_link = (By.XPATH, ElementsPageObjects.WEB_TABLES_LINK)
-        self.dynamic_properties = (By.XPATH, ElementsPageObjects.DYNAMIC_PROPERTIES_LINK)
-        self.book_store_app = (By.XPATH, ElementsPageObjects.BOOK_STORE_APP_LINK)
-        self.book_store = (By.XPATH, ElementsPageObjects.BOOK_STORE_LINK)
+        self.checkbox_link = (By.XPATH, self.CHECKBOX_LINK)
+        self.webtables_link = (By.XPATH, self.WEB_TABLES_LINK)
+        self.dynamic_properties = (By.XPATH, self.DYNAMIC_PROPERTIES_LINK)
+        self.book_store_app = (By.XPATH, self.BOOK_STORE_APP_LINK)
+        self.book_store = (By.XPATH, self.BOOK_STORE_LINK)
 
     def navigate(self):
         """

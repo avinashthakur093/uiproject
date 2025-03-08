@@ -1,16 +1,17 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from page_objects.all_page_objects import HomePageObjects
 from pages.base_page import BasePage
 from utils.logger import logger
 from config import Config
 
 
 class HomePage(BasePage):
+    ELEMENTS_LINK = "//h5[text()='Elements']"
+
     def __init__(self, driver):
         super().__init__(driver)
-        self.elements_link = (By.XPATH, HomePageObjects.ELEMENTS_LINK)
+        self.elements_link = (By.XPATH, self.ELEMENTS_LINK)
 
     def navigate(self):
         pass  # Already on homepage

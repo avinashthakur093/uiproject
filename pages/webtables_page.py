@@ -6,24 +6,37 @@ from datetime import datetime
 import random
 from pages.home_page import HomePage
 from pages.elements_page import ElementsPage
-from page_objects.all_page_objects import WebTablesPageObjects
 from pages.base_page import BasePage
 from utils.logger import logger
 from config import Config
 
 
 class WebTablesPage(BasePage):
+    ADD_ROW_BUTTON = "//button[@id='addNewRecordButton']"
+    FIRST_NAME = "//input[@id='firstName']"
+    LAST_NAME = "//input[@id='lastName']"
+    EMAIL = "//input[@id='userEmail']"
+    AGE = "//input[@id='age']"
+    SALARY = "//input[@id='salary']"
+    DEPARTMENT = "//input[@id='department']"
+    SUBMIT_BUTTON = "//button[@id='submit']"
+    PREVIOUS_BUTTON = "//button[contains(text(), 'Previous')]"
+    NEXT_BUTTON = "//button[contains(text(), 'Next')]"
+    PAGE_INFO_ELEMENT = "//span[@class='-pageInfo']"
+    PAGE_SIZE_COMBO_BOX = "//span[@class='select-wrap -pageSizeOptions']"
+    DEFAULT_PAGE = "//input[@aria-label='jump to page' and @value='1']"
+
     def __init__(self, driver):
         super().__init__(driver)
-        self.add_row_btn = (By.XPATH, WebTablesPageObjects.ADD_ROW_BUTTON)
+        self.add_row_btn = (By.XPATH, self.ADD_ROW_BUTTON)
         # Registration Form:
-        self.first_name = (By.XPATH, WebTablesPageObjects.FIRST_NAME)
-        self.last_name = (By.XPATH, WebTablesPageObjects.LAST_NAME)
-        self.email = (By.XPATH, WebTablesPageObjects.EMAIL)
-        self.age = (By.XPATH, WebTablesPageObjects.AGE)
-        self.salary = (By.XPATH, WebTablesPageObjects.SALARY)
-        self.department = (By.XPATH, WebTablesPageObjects.DEPARTMENT)
-        self.submit_btn = (By.XPATH, WebTablesPageObjects.SUBMIT_BUTTON)
+        self.first_name = (By.XPATH, self.FIRST_NAME)
+        self.last_name = (By.XPATH, self.LAST_NAME)
+        self.email = (By.XPATH, self.EMAIL)
+        self.age = (By.XPATH, self.AGE)
+        self.salary = (By.XPATH, self.SALARY)
+        self.department = (By.XPATH, self.DEPARTMENT)
+        self.submit_btn = (By.XPATH, self.SUBMIT_BUTTON)
         self.fake_data = Faker()
 
     def navigate(self):

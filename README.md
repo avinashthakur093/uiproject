@@ -12,8 +12,6 @@ This project is a **Selenium-based UI automation framework** using **Python & Py
 │-- conftest.py             # Pytest fixtures and setup hooks
 │-- pytest.ini              # Pytest configuration file
 │-- requirements.txt        # List of dependencies
-├── page_objects/           # Stores locaters
-│   ├── all_page_objects.py # Stores locaters for each page in seperate class
 │
 ├── pages/                  # Page Object Model (POM) implementation
 │   ├── base_page.py        # Common methods for all pages
