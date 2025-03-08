@@ -1,6 +1,5 @@
 import pytest
 from selenium.webdriver.common.by import By
-from page_objects.all_page_objects import WebTablesPageObjects
 from pages.webtables_page import WebTablesPage
 
 
@@ -11,10 +10,10 @@ class WebTablesTestClass:
         Test Case: Verify that the pagination controls(Next, Previous, Page Numbers) are visible
         :param driver:
         """
-        previous_btn = (By.XPATH, WebTablesPageObjects.PREVIOUS_BUTTON)
-        next_btn = (By.XPATH, WebTablesPageObjects.NEXT_BUTTON)
-        page_info_element = (By.XPATH, WebTablesPageObjects.PAGE_INFO_ELEMENT)
-        page_size_combo_box = (By.XPATH, WebTablesPageObjects.PAGE_SIZE_COMBO_BOX)
+        previous_btn = (By.XPATH, WebTablesPage.PREVIOUS_BUTTON)
+        next_btn = (By.XPATH, WebTablesPage.NEXT_BUTTON)
+        page_info_element = (By.XPATH, WebTablesPage.PAGE_INFO_ELEMENT)
+        page_size_combo_box = (By.XPATH, WebTablesPage.PAGE_SIZE_COMBO_BOX)
         web_tables_page = WebTablesPage(driver)
         web_tables_page.navigate()
 
@@ -32,7 +31,7 @@ class WebTablesTestClass:
         Test Case: Verify when the page loads, Page 1 should be selected by default
         :param driver:
         """
-        default_page = (By.XPATH, WebTablesPageObjects.DEFAULT_PAGE)
+        default_page = (By.XPATH, WebTablesPage.DEFAULT_PAGE)
         web_tables_page = WebTablesPage(driver)
         web_tables_page.navigate()
         assert web_tables_page.element_is_visible(default_page) == True, "Page 1 is not loaded by default!"

@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from page_objects.all_page_objects import BookStorePageObjects
 from pages.base_page import BasePage
 from pages.elements_page import ElementsPage
 from utils.logger import logger
@@ -9,6 +8,11 @@ from config import Config
 
 
 class BookStorePage(BasePage):
+    BOOK_LIST_TABLE_BODY = "rt-tbody"
+    ALL_BOOK_LIST = "rt-tr-group"
+    BOOK_TITLE = "mr-2"
+    BOOK_AUTHOR_PUBLISHER = "rt-td"
+
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -27,18 +31,18 @@ class BookStorePage(BasePage):
         """
         # Wait until the book list is visible
         wait = WebDriverWait(self.driver, Config.shortTimeout)
-        wait.until(EC.presence_of_element_located((By.CLASS_NAME, BookStorePageObjects.BOOK_LIST_TABLE_BODY)))
+        wait.until(EC.presence_of_element_located((By.CLASS_NAME, self.BOOK_LIST_TABLE_BODY)))
 
         # Fetch all books information
-        books = self.driver.find_elements(By.CLASS_NAME, BookStorePageObjects.ALL_BOOK_LIST)
+        books = self.driver.find_elements(By.CLASS_NAME, self.ALL_BOOK_LIST)
         book_info_list = []
         count = 0
         for book in range(0, 8):
-            title = books[book].find_element(By.CLASS_NAME, BookStorePageObjects.BOOK_TITLE).text
+            title = books[book].find_element(By.CLASS_NAME, self.BOOK_TITLE).text
             # Assuming 2nd column is author
-            author = books[book].find_elements(By.CLASS_NAME, BookStorePageObjects.BOOK_AUTHOR_PUBLISHER)[1].text
+            author = books[book].find_elements(By.CLASS_NAME, self.BOOK_AUTHOR_PUBLISHER)[1].text
             # Assuming 3rd column is publisher
-            publisher = books[book].find_elements(By.CLASS_NAME, BookStorePageObjects.BOOK_AUTHOR_PUBLISHER)[2].text
+            publisher = books[book].find_elements(By.CLASS_NAME, self.BOOK_AUTHOR_PUBLISHER)[2].text
             count += 1
             book_info_list.append({"title": title, "author": author, "publisher": publisher})
         return book_info_list
