@@ -45,8 +45,10 @@ class WebTablesTestClass:
         """
         web_tables_page = WebTablesPage(driver)
         web_tables_page.navigate()
-        disabled_previous_button = driver.find_element(By.XPATH, WebTablesPage.DISABLED_PREVIOUS_BUTTON)
-        disabled_next_button = driver.find_element(By.XPATH, WebTablesPage.DISABLED_NEXT_BUTTON)
+        # disabled_previous_button = driver.find_element(By.XPATH, WebTablesPage.DISABLED_PREVIOUS_BUTTON)
+        disabled_previous_button = web_tables_page.find_element(By.XPATH, WebTablesPage.DISABLED_PREVIOUS_BUTTON)
+        # disabled_next_button = driver.find_element(By.XPATH, WebTablesPage.DISABLED_NEXT_BUTTON)
+        disabled_next_button = web_tables_page.find_element(By.XPATH, WebTablesPage.DISABLED_NEXT_BUTTON)
         assert disabled_previous_button is not None, "Previous Button is not disabled."
         assert disabled_next_button is not None, "Next Button is not disabled."
 

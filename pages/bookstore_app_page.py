@@ -1,10 +1,8 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
 from pages.elements_page import ElementsPage
 from utils.logger import logger
-from config import Config
 
 
 class BookStorePage(BasePage):
@@ -30,15 +28,14 @@ class BookStorePage(BasePage):
         :return:
         """
         # Wait until the book list is visible
-        wait = WebDriverWait(self.driver, Config.shortTimeout)
-        wait.until(EC.presence_of_element_located((By.CLASS_NAME, self.BOOK_LIST_TABLE_BODY)))
+        self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, self.BOOK_LIST_TABLE_BODY)))
 
         # Fetch all books information
         books = self.driver.find_elements(By.CLASS_NAME, self.ALL_BOOK_LIST)
         book_info_list = []
         count = 0
         for book in range(0, 8):
-            title = books[book].find_element(By.CLASS_NAME, self.BOOK_TITLE).text
+            title = self.find_element(By.CLASS_NAME, self.BOOK_TITLE, books[book]).text
             # Assuming 2nd column is author
             author = books[book].find_elements(By.CLASS_NAME, self.BOOK_AUTHOR_PUBLISHER)[1].text
             # Assuming 3rd column is publisher
