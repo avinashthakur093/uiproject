@@ -3,7 +3,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
 from pages.elements_page import ElementsPage
-# from page_objects.all_page_objects import GenericObjects, DynamicPropertiesPageObjects
 from utils.logger import logger
 from config import Config
 
@@ -43,7 +42,7 @@ class DynamicPropertiesPage(BasePage):
         assert button.is_displayed(), "Button is not visible after waiting."
 
         # b.	Refresh the page and verify that the second button changes color after some time
-        color_btn = self.driver.find_element(self.color_change_btn[0], self.color_change_btn[1])
+        color_btn = self.find_element(self.color_change_btn[0], self.color_change_btn[1])
         initial_color = color_btn.value_of_css_property("color")
         # Refresh the page
         self.driver.refresh()

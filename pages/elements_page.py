@@ -1,10 +1,7 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-# from page_objects.all_page_objects import ElementsPageObjects
 from pages.base_page import BasePage
 from pages.home_page import HomePage
-from config import Config
 
 
 class ElementsPage(BasePage):
@@ -34,33 +31,29 @@ class ElementsPage(BasePage):
         Navigate from Elements > Checkbox
         :return:
         """
-        WebDriverWait(self.driver, Config.shortTimeout).until(EC.element_to_be_clickable(self.checkbox_link)).click()
-
+        self.click_element(self.checkbox_link[0], self.checkbox_link[1])
     def click_web_tables(self):
         """
         Navigate from Elements > Web Tables
         :return:
         """
-        WebDriverWait(self.driver, Config.shortTimeout).until(EC.element_to_be_clickable(self.webtables_link)).click()
-
+        self.click_element(self.webtables_link[0], self.webtables_link[1])
     def click_dynamic_properties(self):
         """
         Navigate from Elements > Dynamic Properties
         :return:
         """
-        WebDriverWait(self.driver, Config.shortTimeout).until(
-            EC.element_to_be_clickable(self.dynamic_properties)).click()
+        self.click_element(self.dynamic_properties[0], self.dynamic_properties[1])
 
     def click_book_store_application(self):
         """
         Navigate from Elements > Book Store Application > Book Store
         :return:
         """
-        wait = WebDriverWait(self.driver, Config.shortTimeout)
         # Scroll to 'Book Store Application' in the side navigation
-        book_store_nav = wait.until(EC.presence_of_element_located(self.book_store_app))
+        book_store_nav = self.wait.until(EC.presence_of_element_located(self.book_store_app))
         self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", book_store_nav)
         # Click on 'Book Store Application'
-        WebDriverWait(self.driver, Config.shortTimeout).until(EC.element_to_be_clickable(self.book_store_app)).click()
+        self.click_element(self.book_store_app[0], self.book_store_app[1])
         # Navigate to Book Store, where Book information is available
-        WebDriverWait(self.driver, Config.shortTimeout).until(EC.element_to_be_clickable(self.book_store)).click()
+        self.click_element(self.book_store[0], self.book_store[1])

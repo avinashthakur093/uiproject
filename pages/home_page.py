@@ -18,8 +18,6 @@ class HomePage(BasePage):
 
     def click_elements(self):
         logger.info("Clicking on Elements section")
-        element = WebDriverWait(self.driver, Config.shortTimeout).until(
-            EC.element_to_be_clickable(self.elements_link)
-        )
+        element = self.wait.until(EC.element_to_be_clickable(self.elements_link))
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)  # Scroll into view
         self.driver.execute_script("arguments[0].click();", element)  # Use JavaScript click if necessary
