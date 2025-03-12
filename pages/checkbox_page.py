@@ -85,8 +85,8 @@ class CheckboxPage(BasePage):
             # Locate the <svg> tag inside the checkbox <span>
             svg_element = checkbox.find_element(By.XPATH, self.SELECTED_CHECKBOX)
             assert "rct-icon-check" in svg_element.get_attribute(
-                "class"), f"Checkbox is not selected: {self.find_element(By.XPATH, 
-                                                                         self.SELECTED_CHECKBOX_TEXT, checkbox).text}"
+                "class"), (f"Checkbox is not selected: "
+                           f"{self.find_element(By.XPATH, self.SELECTED_CHECKBOX_TEXT, checkbox).text}")
         logger.info(f"All child checkboxes are selected!")
 
     def expand_private_checkbox(self):
