@@ -20,11 +20,17 @@ class WebTablesPage(BasePage):
     SALARY = "//input[@id='salary']"
     DEPARTMENT = "//input[@id='department']"
     SUBMIT_BUTTON = "//button[@id='submit']"
+    DISABLED_PREVIOUS_BUTTON = "//button[@disabled and text()='Previous']"
+    DISABLED_NEXT_BUTTON = "//button[@disabled and text()='Next']"
     PREVIOUS_BUTTON = "//button[contains(text(), 'Previous')]"
     NEXT_BUTTON = "//button[contains(text(), 'Next')]"
     PAGE_INFO_ELEMENT = "//span[@class='-pageInfo']"
+    TOTAL_PAGES_COUNT = "//span[@class='-totalPages']"
     PAGE_SIZE_COMBO_BOX = "//span[@class='select-wrap -pageSizeOptions']"
     DEFAULT_PAGE = "//input[@aria-label='jump to page' and @value='1']"
+    SCROLL_INTO_VIEW = "arguments[0].scrollIntoView(true);"
+    SELECT_PAGE_SIZE = "//option[@value={page_size}]"
+    TABLE_ROWS = "//div[@class='rt-tr-group']"
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -80,3 +86,22 @@ class WebTablesPage(BasePage):
         element = WebDriverWait(self.driver, Config.shortTimeout).until(EC.visibility_of_element_located(
             element_to_be_checked))
         return element.is_displayed()
+
+    def get_total_page_count(self):
+        """
+        Function to return total number of pages available under pagination
+        :param
+        :return: Returns total number pages
+        """
+
+        # scroll to page count element, before getting the count
+        total_page_count_element = self.driver.find_element(By.XPATH, self.TOTAL_PAGES_COUNT)
+        self.driver.execute_script(self.SCROLL_INTO_VIEW, total_page_count_element)
+        # Locate the span element by xpath using class name
+        element = self.driver.find_element(By.XPATH, self.TOTAL_PAGES_COUNT)
+
+        # Get the text from the element
+        page_count = element.text
+        if page_count:
+            return int(page_count)
+        return 0

@@ -1,6 +1,7 @@
 import pytest
 from selenium.webdriver.common.by import By
 from pages.webtables_page import WebTablesPage
+from utils.logger import logger
 
 
 class WebTablesTestClass:
@@ -36,6 +37,36 @@ class WebTablesTestClass:
         web_tables_page.navigate()
         assert web_tables_page.element_is_visible(default_page) == True, "Page 1 is not loaded by default!"
 
+    @pytest.mark.webtables
+    def test_verify_previous_and_next_button_is_disabled_on_first_page(self, driver):
+        """
+        Test Case: Verify when the first page is loaded, then previous and next button is disabled when page count is 1.
+        :param driver:
+        """
+        web_tables_page = WebTablesPage(driver)
+        web_tables_page.navigate()
+        disabled_previous_button = driver.find_element(By.XPATH, WebTablesPage.DISABLED_PREVIOUS_BUTTON)
+        disabled_next_button = driver.find_element(By.XPATH, WebTablesPage.DISABLED_NEXT_BUTTON)
+        assert disabled_previous_button is not None, "Previous Button is not disabled."
+        assert disabled_next_button is not None, "Next Button is not disabled."
+
+    @pytest.mark.webtables
+    def test_verify_new_page_gets_added_after_adding_rows_more_than_page_size(self, driver):
+        """
+        Test Case: Verify when the number of records in the page is equal to the max number of records allowed in the
+        page, verify if a new page gets added for an addition of new record here.
+        """
+        web_tables_page = WebTablesPage(driver)
+        web_tables_page.navigate()
+        current_page_count = web_tables_page.get_total_page_count()
+        web_tables_page.add_new_rows(10)
+        total_page_count = web_tables_page.get_total_page_count()
+        # assert total_page_count > current_page_count and total_page_count > 0, "Page number not added"
+        logger.info(f"Current Page Count: {current_page_count}, Total Page Count: {total_page_count}")
+        assert 0 < total_page_count > current_page_count, ("New page not got added after adding rows more than allowed "
+                                                           "page size")
+
+
     def test_verify_clicking_next_button(self, driver):
         """
         Test Case: Click the 'Next' button and check if it navigates to the next page.
@@ -50,9 +81,4 @@ class WebTablesTestClass:
         """
         pass
 
-    def test_verify_previous_button_is_disabled_on_first_page(self, driver):
-        """
-        Test Case: Verify when the first page is loaded, then previous button is disabled.
-        :param driver:
-        """
-        pass
+
